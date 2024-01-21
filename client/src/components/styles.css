@@ -1,0 +1,32 @@
+.home-container {
+    background-image: url("https://wallpapers.com/images/hd/deadpool-digital-movie-cover-s5l2oyuqd8nngufh.jpg");
+    background-size: cover;
+    height: 100vh; 
+  }
+
+  .welcome-heading {
+    color: white;
+    font-size: 3rem; 
+    font-weight: bold;
+    padding-left:3%;
+    padding-top: 2%;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+
+
+
+  }
+  .welcome-content {
+    color: white;
+    font-size: 2rem; 
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-weight: 100;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-left:3%;
+  }
+
+  .explore-button {
+    margin-top: 2%;
+    margin-left: 3%;
+  }
