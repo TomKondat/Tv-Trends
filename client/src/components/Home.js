@@ -14,7 +14,7 @@ function Home() {
       </div>
       <Link to="/movies">
         <Button className="explore-button" variant="outline-light">
-          Explore
+          Explore Movies
         </Button>
       </Link>
     </div>
