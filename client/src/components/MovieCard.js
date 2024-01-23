@@ -13,7 +13,7 @@ function MovieCard({ movie }) {
       />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Text>Stars: {movie.vote_average}</Card.Text>
+        <Card.Text>Stars: {(movie.vote_average / 2).toFixed(1)}</Card.Text>
         <Button variant="danger">Watch Trailer!</Button>
       </Card.Body>
     </Card>
