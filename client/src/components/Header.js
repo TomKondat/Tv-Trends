@@ -14,8 +14,8 @@ function Header() {
             height="30"
             className="d-inline-block align-top"
           />{" "}
-          &nbsp; <span style={{ color: "#CE3B3B" }}>M</span>ovies-
-          <span style={{ color: "#CE3B3B" }}>A</span>pp &nbsp;
+          &nbsp; <span style={{ color: "#CE3B3B" }}>T</span>V&nbsp;
+          <span style={{ color: "#CE3B3B" }}>T</span>rends &nbsp;
           <img
             alt=""
             src="https://www.freeiconspng.com/thumbs/popcorn-png/popcorn-png-16.png"
