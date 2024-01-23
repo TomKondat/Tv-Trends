@@ -6,7 +6,7 @@ function Movies() {
 
   const getMovies = async () => {
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?api_key=6f8ef2f5b313c678f8869b69affa2d31"
+      "https://api.themoviedb.org/3/trending/movie/day?api_key=6f8ef2f5b313c678f8869b69affa2d31"
     )
       .then((res) => res.json())
       .then((data) => setMovies(data.results));
@@ -19,7 +19,7 @@ function Movies() {
   console.log(movies);
 
   return (
-    <div>
+    <div className="movies-container">
       {movies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
       ))}

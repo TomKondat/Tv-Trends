@@ -27,3 +27,10 @@
     margin-top: 2%;
     margin-left: 3%;
   }
+
+  .movies-container {
+    background-image: url("https://clipart-library.com/images/6cr5bjnEi.jpg");
+    background-size: cover;
+    height: 100vh;
+    
+  }
