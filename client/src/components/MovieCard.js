@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 function MovieCard({ movie }) {
+  const title = movie.title || movie.name;
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img
@@ -11,7 +12,7 @@ function MovieCard({ movie }) {
         alt={movie.title}
       />
       <Card.Body>
-        <Card.Title>{movie.title}</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>Stars: {movie.vote_average}</Card.Text>
         <Button variant="danger">Watch Trailer!</Button>
       </Card.Body>

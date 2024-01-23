@@ -19,15 +19,16 @@ function Home() {
         </span>
       </div>
       <Link to="/movies">
-        <Button className="explore-button" variant="outline-light">
+        <Button className="explore-movies" size="lg" variant="dark" active>
           Explore Movies
         </Button>
       </Link>
-      <Link to="/movies">
-        <Button className="explore-button" variant="outline-light">
+      <Link to="/tvshows">
+        <Button className="explore-tvshows" size="lg" rounded variant="dark">
           Explore TV Shows
         </Button>
       </Link>
+      <div></div>
     </div>
   );
 }
