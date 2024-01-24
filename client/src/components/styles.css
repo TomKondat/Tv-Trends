@@ -33,10 +33,36 @@
     margin-left: 3%;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAEP9p2Sfxgm0yBcar9QeBSuBaR0nwUBOzDQ&usqp=CAU");
   }
-
-  .movies-container {
-    background-image: url("https://clipart-library.com/images/6cr5bjnEi.jpg");
-    background-size: cover;
-    height: 100vh;
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+  .movies-container {
+    background-color: #0b0a2d;
+    background-size: cover;
+   
+  }
+ 
+  .tvshows-container {
+    background-color: #0b0a2d;
+    background-size: cover;
+    height: 1000vh;
+  }
+
+  button.trailer-button{
+    background-color: #CE3B3B;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+  }
+
+.pagination-custom .page-link {
+  background-color:#CE3B3B;
+  color: white;
+}
+
+.pagination-custom .page-item.active .page-link {
+ background-color: darkred;
+ border-color: darkred;
+}

@@ -24,7 +24,7 @@ function Home() {
         </Button>
       </Link>
       <Link to="/tvshows">
-        <Button className="explore-tvshows" size="lg" rounded variant="dark">
+        <Button className="explore-tvshows" size="lg" variant="dark">
           Explore TV Shows
         </Button>
       </Link>

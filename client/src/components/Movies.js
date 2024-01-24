@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Pagination from "react-bootstrap/Pagination";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const moviesPerPage = 4;
 
   const getMovies = async () => {
     fetch(
@@ -16,13 +22,44 @@ function Movies() {
     getMovies();
   }, []);
 
-  console.log(movies);
+  const indexOfLastMovie = currentPage * moviesPerPage;
+  const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
+  const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="movies-container">
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+      <Container className="movies-container">
+        <div>
+          <h1 style={{ color: "#CE3B3B" }} className="py-5">
+            Most Trending Movies
+          </h1>
+        </div>
+        <Row xs={1} md={2} lg={3} xl={4} xxl={4} className="g-4">
+          {currentMovies.map((movie) => (
+            <Col key={movie.id}>
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+        </Row>
+
+        <Pagination
+          className="pagination-custom py-5 justify-content-center"
+          var
+        >
+          {[...Array(Math.ceil(movies.length / moviesPerPage)).keys()].map(
+            (number) => (
+              <Pagination.Item
+                key={number + 1}
+                active={number + 1 === currentPage}
+                onClick={() => paginate(number + 1)}
+              >
+                {number + 1}
+              </Pagination.Item>
+            )
+          )}
+        </Pagination>
+      </Container>
     </div>
   );
 }
