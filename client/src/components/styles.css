@@ -40,3 +40,11 @@
     height: 100vh;
 
   }
+
+  button.trailer-button{
+    background-color: #CE3B3B;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+  }
+
