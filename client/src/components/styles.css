@@ -35,10 +35,15 @@
   }
 
   .movies-container {
-    background-image: url("https://clipart-library.com/images/6cr5bjnEi.jpg");
+    background-color: #0b0a2d;
     background-size: cover;
-    height: 100vh;
+    height: 1000vh;
+  }
 
+  .tvshows-container {
+    background-color: #0b0a2d;
+    background-size: cover;
+    height: 1000vh;
   }
 
   button.trailer-button{

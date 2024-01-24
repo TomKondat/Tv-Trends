@@ -20,10 +20,11 @@ function MovieCard({ movie }) {
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
       />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          {(movie.vote_average / 2).toFixed(1)} ({movie.vote_count} Votes)
+      <Card.Body style={{ backgroundColor: "black" }}>
+        <Card.Title style={{ color: "white" }}>{title}</Card.Title>
+        <Card.Text style={{ color: "white" }}>
+          Rating: {(movie.vote_average / 2).toFixed(1)} ({movie.vote_count}{" "}
+          Votes)
         </Card.Text>
         <Button
           className="trailer-button"

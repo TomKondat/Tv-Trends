@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
-
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 function Movies() {
   const [movies, setMovies] = useState([]);
 
@@ -20,9 +22,20 @@ function Movies() {
 
   return (
     <div className="movies-container">
-      {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+      <Container className="movies-container">
+        <div>
+          <h1 style={{ color: "#CE3B3B" }} className="py-5">
+            Most Trending Movies
+          </h1>
+        </div>
+        <Row xs={1} md={2} lg={3} xl={4} xxl={4} className="g-4">
+          {movies.map((movie) => (
+            <Col key={movie.id}>
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }
