@@ -37,7 +37,7 @@
   .movies-container {
     background-color: #0b0a2d;
     background-size: cover;
-    height: 1000vh;
+    height: 100vh;
   }
 
   .tvshows-container {
@@ -53,3 +53,12 @@
     padding: 1%;
   }
 
+.pagination-custom .page-link {
+  background-color:#CE3B3B;
+  color: white;
+}
+
+.pagination-custom .page-item.active .page-link {
+ background-color: darkred;
+ border-color: darkred;
+}
