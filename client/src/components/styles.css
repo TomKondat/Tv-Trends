@@ -33,13 +33,17 @@
     margin-left: 3%;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAEP9p2Sfxgm0yBcar9QeBSuBaR0nwUBOzDQ&usqp=CAU");
   }
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   .movies-container {
     background-color: #0b0a2d;
     background-size: cover;
-    height: 100vh;
+   
   }
-
+ 
   .tvshows-container {
     background-color: #0b0a2d;
     background-size: cover;
