@@ -56,6 +56,11 @@
     font-weight: bold;
     padding: 1%;
   }
+  button.overview-button{
+    
+    font-weight: bold;
+    padding: 1%;
+  }
 
 .pagination-custom .page-link {
   background-color:#CE3B3B;
