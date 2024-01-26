@@ -4,11 +4,13 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Pagination from "react-bootstrap/Pagination";
+import Spinner from "react-bootstrap/Spinner";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const moviesPerPage = 4;
+  const [loading, setLoading] = useState(true);
 
   const getMovies = async () => {
     fetch(
@@ -16,6 +18,7 @@ function Movies() {
     )
       .then((res) => res.json())
       .then((data) => setMovies(data.results));
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -32,17 +35,24 @@ function Movies() {
       <Container className="movies-container">
         <div>
           <h1 style={{ color: "#CE3B3B" }} className="py-5">
-            Most Trending Movies
+            Most Trending Movies Right Now
           </h1>
         </div>
-        <Row xs={1} md={2} lg={3} xl={4} xxl={4} className="g-4">
-          {currentMovies.map((movie) => (
-            <Col key={movie.id}>
-              <MovieCard movie={movie} />
-            </Col>
-          ))}
-        </Row>
-
+        {loading ? (
+          <Spinner
+            animation="border"
+            role="status"
+            style={{ color: "#CE3B3B", margin: "auto", display: "block" }}
+          />
+        ) : (
+          <Row xs={1} md={2} lg={3} xl={4} xxl={4} className="g-4">
+            {currentMovies.map((movie) => (
+              <Col key={movie.id}>
+                <MovieCard movie={movie} />
+              </Col>
+            ))}
+          </Row>
+        )}
         <Pagination
           className="pagination-custom py-5 justify-content-center"
           var
