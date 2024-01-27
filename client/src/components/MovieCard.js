@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import "./styles.css";
+import { IoMdStar } from "react-icons/io";
 
 function MovieCard({ movie }) {
   const title = movie.title || movie.name;
@@ -51,8 +52,9 @@ function MovieCard({ movie }) {
       <Card.Body style={{ backgroundColor: "black" }}>
         <Card.Title style={{ color: "white" }}>{title}</Card.Title>
         <Card.Text style={{ color: "white" }}>
-          Rating: {(movie.vote_average / 2).toFixed(1)} ({movie.vote_count}{" "}
-          Votes)
+          Rating: {(movie.vote_average / 2).toFixed(1)}&nbsp;
+          <IoMdStar color="yellow" size={23} style={{ marginBottom: "2px" }} />
+          &nbsp; ({movie.vote_count} Votes)
         </Card.Text>
 
         <Button
@@ -71,7 +73,7 @@ function MovieCard({ movie }) {
           <Button
             className="overview-button"
             variant="secondary"
-            style={{ marginLeft: "70px" }}
+            style={{ marginLeft: "65px" }}
             onClick={handleOverview}
           >
             Overview

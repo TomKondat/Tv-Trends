@@ -9,7 +9,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col md={12} className="text-center mt-3">
-            <div style={{ fontSize: 25, marginBottom: 10 }}>
+            <div style={{ fontSize: 20, marginBottom: 10 }}>
               <Link to="/">
                 <img
                   src="https://www.freeiconspng.com/thumbs/popcorn-png/popcorn-png-16.png"
