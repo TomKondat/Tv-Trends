@@ -72,3 +72,11 @@
  background-color: darkred;
  border-color: darkred;
 }
+
+.card-hover-animation {
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.card-hover-animation:hover {
+  transform: scale(1.1) rotate(2deg);
+}

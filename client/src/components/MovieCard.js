@@ -42,7 +42,7 @@ function MovieCard({ movie }) {
   );
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card className="card-hover-animation" style={{ width: "18rem" }}>
       <Card.Img
         variant="top"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
