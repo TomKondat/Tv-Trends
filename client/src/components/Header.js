@@ -14,7 +14,7 @@ function Header() {
             height="30"
             className="d-inline-block align-top"
           />{" "}
-          &nbsp; <span style={{ color: "#CE3B3B" }}>T</span>V&nbsp;
+          &nbsp; <span style={{ color: "#CE3B3B" }}>T</span>v&nbsp;
           <span style={{ color: "#CE3B3B" }}>T</span>rends &nbsp;
           <img
             alt=""

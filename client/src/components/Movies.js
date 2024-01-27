@@ -13,12 +13,18 @@ function Movies() {
   const [loading, setLoading] = useState(true);
 
   const getMovies = async () => {
-    fetch(
-      "https://api.themoviedb.org/3/trending/movie/day?api_key=6f8ef2f5b313c678f8869b69affa2d31"
-    )
-      .then((res) => res.json())
-      .then((data) => setMovies(data.results));
-    setLoading(false);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      const response = await fetch(
+        "https://api.themoviedb.org/3/trending/movie/day?api_key=6f8ef2f5b313c678f8869b69affa2d31"
+      );
+      const data = await response.json();
+      setMovies(data.results);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -32,7 +38,7 @@ function Movies() {
 
   return (
     <div className="movies-container">
-      <Container className="movies-container">
+      <Container>
         <div>
           <h1 style={{ color: "#CE3B3B" }} className="py-5">
             Most Trending Movies Right Now
@@ -42,10 +48,18 @@ function Movies() {
           <Spinner
             animation="border"
             role="status"
-            style={{ color: "#CE3B3B", margin: "auto", display: "block" }}
+            style={{
+              color: "#CE3B3B",
+              margin: "auto",
+              display: "block",
+              marginTop: "20%",
+              marginBottom: "20%",
+              width: "100px",
+              height: "100px",
+            }}
           />
         ) : (
-          <Row xs={1} md={2} lg={3} xl={4} xxl={4} className="g-4">
+          <Row xs={1} md={2} lg={3} xl={3} xxl={4} className="g-4">
             {currentMovies.map((movie) => (
               <Col key={movie.id}>
                 <MovieCard movie={movie} />

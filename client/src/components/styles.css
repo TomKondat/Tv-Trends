@@ -10,9 +10,10 @@
     font-weight: bold;
     padding-left:3%;
     padding-top: 2%;
-    /* background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 40%; */
+  }
+  .welcome-heading span {
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .welcome-content {
     color: white;
@@ -38,8 +39,11 @@
     padding: 0;
     box-sizing: border-box;
   }
+  
   .movies-container {
-    background-color: #0b0a2d;
+    background-image: url("https://wallpaperaccess.com/full/504543.jpg");
+    /* background-image: url("https://images.hdqwalls.com/wallpapers/2022-stranger-things-season-4-5k-gw.jpg"); */
+    /* background-color: #0b0a2d; */
     background-size: cover;
     min-height: 95vh;
    

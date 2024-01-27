@@ -8,7 +8,7 @@ function Home() {
     <div className="home-container">
       <div className="welcome-heading">
         <span>
-          Welcome to <span style={{ color: "#CE3B3B" }}>T</span>V{" "}
+          Welcome to <span style={{ color: "#CE3B3B" }}>T</span>v{" "}
           <span style={{ color: "#CE3B3B" }}>T</span>rends
         </span>
       </div>
