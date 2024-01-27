@@ -41,6 +41,7 @@
   .movies-container {
     background-color: #0b0a2d;
     background-size: cover;
+    min-height: 95vh;
    
   }
  
@@ -56,6 +57,11 @@
     font-weight: bold;
     padding: 1%;
   }
+  button.overview-button{
+    
+    font-weight: bold;
+    padding: 1%;
+  }
 
 .pagination-custom .page-link {
   background-color:#CE3B3B;
@@ -65,4 +71,12 @@
 .pagination-custom .page-item.active .page-link {
  background-color: darkred;
  border-color: darkred;
+}
+
+.card-hover-animation {
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.card-hover-animation:hover {
+  transform: scale(1.1) rotate(2deg);
 }
