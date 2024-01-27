@@ -4,10 +4,10 @@ import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import "./styles.css";
-import { CgDetailsMore } from "react-icons/cg";
 
 function MovieCard({ movie }) {
   const title = movie.title || movie.name;
+  const release_date = movie.release_date || movie.first_air_date;
   const [showOverview, setShowOverview] = useState(false);
 
   const handleTrailer = () => {
@@ -26,7 +26,18 @@ function MovieCard({ movie }) {
     <Popover id="popover-basic" className="overview-popover">
       <Popover.Header as="h3">{title} Overview</Popover.Header>
 
-      <Popover.Body>{movie.overview}</Popover.Body>
+      <Popover.Body style={{ minHeight: "18rem" }}>
+        {movie.overview}
+      </Popover.Body>
+      <Popover.Body>{movie.adult}</Popover.Body>
+      <Popover.Body>
+        <strong>Release Date:</strong> &nbsp;
+        {new Date(release_date).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
+      </Popover.Body>
     </Popover>
   );
 
