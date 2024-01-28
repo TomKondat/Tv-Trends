@@ -28,15 +28,15 @@
   }
 
   .explore-movies {
-    margin-top: 3%;
+    margin-top: 6%;
     margin-left: 3%;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-U-cV5OwY2D4kpGfrlZZw0PyDMbztKx4cgg&usqp=CAU");
     
   }
 
   .explore-tvshows {
-    margin-top: 3%;
-    margin-left: 3%;
+    margin-top: 6%;
+    margin-left: 4%;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAEP9p2Sfxgm0yBcar9QeBSuBaR0nwUBOzDQ&usqp=CAU");
   }
   * {
