@@ -1,5 +1,5 @@
 .home-container {
-    background-image: url("https://wallpapers.com/images/hd/deadpool-digital-movie-cover-s5l2oyuqd8nngufh.jpg");
+    background-image: url("../images/deadpool.jpg");
     background-size: cover;
     height: 100vh; 
   }
@@ -30,14 +30,14 @@
   .explore-movies {
     margin-top: 6%;
     margin-left: 3%;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-U-cV5OwY2D4kpGfrlZZw0PyDMbztKx4cgg&usqp=CAU");
-    
+    background-image: url("../images/red.jpg");
+
   }
 
   .explore-tvshows {
     margin-top: 6%;
     margin-left: 4%;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAEP9p2Sfxgm0yBcar9QeBSuBaR0nwUBOzDQ&usqp=CAU");
+    background-image: url("../images/blue.jpg");
   }
   * {
     margin: 0;
@@ -46,7 +46,7 @@
   }
   
   .movies-container {
-    background-image: url("https://wallpaperaccess.com/full/504543.jpg");
+    background-image: url("../images/moviebackground.jpg");
     /* background-color: #0b0a2d; */
     background-size: cover;
     min-height: 95vh;
@@ -54,7 +54,7 @@
   }
  
   .tvshows-container {
-    background-image: url("https://images.hdqwalls.com/wallpapers/2022-stranger-things-season-4-5k-gw.jpg");
+    background-image: url("../images/tvshowbackground.jpg");
     background-size: cover;
     min-height: 95vh;
   }

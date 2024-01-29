@@ -5,6 +5,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import "./styles.css";
 import { IoMdStar } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
 function MovieCard({ movie }) {
   const title = movie.title || movie.name;
@@ -25,12 +26,19 @@ function MovieCard({ movie }) {
 
   const popover = (
     <Popover id="popover-basic" className="overview-popover">
-      <Popover.Header as="h3">{title} Overview</Popover.Header>
+      <Popover.Header
+        as="h3"
+        className="d-flex justify-content-between align-items-center "
+      >
+        {title}
+        <Button variant="link" onClick={handleOverview}>
+          <IoClose style={{ color: "#CE3B3B" }} />
+        </Button>
+      </Popover.Header>
 
       <Popover.Body style={{ minHeight: "18rem" }}>
         {movie.overview}
       </Popover.Body>
-      <Popover.Body>{movie.adult}</Popover.Body>
       <Popover.Body>
         <strong>Release Date:</strong> &nbsp;
         {new Date(release_date).toLocaleDateString("en-US", {

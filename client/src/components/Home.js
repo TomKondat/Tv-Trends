@@ -19,12 +19,22 @@ function Home() {
         </span>
       </div>
       <Link to="/movies">
-        <Button className="explore-movies" size="lg" variant="dark" active>
+        <Button
+          className="explore-movies"
+          size="lg"
+          variant="outline-danger"
+          active
+        >
           Explore Movies
         </Button>
       </Link>
       <Link to="/tvshows">
-        <Button className="explore-tvshows" size="lg" variant="dark">
+        <Button
+          className="explore-tvshows"
+          size="lg"
+          variant="outline-primary"
+          active
+        >
           Explore TV Shows
         </Button>
       </Link>
