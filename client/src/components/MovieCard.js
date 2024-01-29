@@ -31,7 +31,7 @@ function MovieCard({ movie }) {
         className="d-flex justify-content-between align-items-center "
       >
         {title}
-        <Button variant="link" pad onClick={handleOverview}>
+        <Button variant="link" onClick={handleOverview}>
           <IoClose style={{ color: "#CE3B3B" }} />
         </Button>
       </Popover.Header>
