@@ -38,7 +38,6 @@ function Home() {
           Explore TV Shows
         </Button>
       </Link>
-      <div></div>
     </div>
   );
 }

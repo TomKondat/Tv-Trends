@@ -19,7 +19,8 @@ const Footer = () => {
                   className="d-inline-block align-top"
                 />
               </Link>
-              &nbsp; © 2024 Tom Kondat. All rights reserved. &nbsp;
+              &nbsp; © 2024 <span style={{ color: "#CE3B3B" }}>Tom Kondat</span>{" "}
+              . All rights reserved. &nbsp;
               <Link to="/">
                 <img
                   src="https://www.freeiconspng.com/thumbs/popcorn-png/popcorn-png-16.png"

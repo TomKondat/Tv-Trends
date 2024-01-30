@@ -82,9 +82,28 @@
 }
 
 .card-hover-animation {
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .card-hover-animation:hover {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1) ;
+}
+
+.heart-link {
+  color: gray; 
+}
+
+.heart-link:hover {
+  color: #CE3B3B; 
+  transform: scale(1.2) ;
+}
+
+button.heart-button{
+  color: grey;
+}
+button.heart-button:hover
+
+{
+  color: #CE3B3B; 
+  transform: scale(1.1) ;
 }

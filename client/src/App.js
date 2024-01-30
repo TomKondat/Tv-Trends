@@ -4,7 +4,8 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Movies from "./components/Movies";
 import TvShows from "./components/TvShows";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
+import LikedPage from "./components/LikedPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/tvshows" element={<TvShows />} />
+        <Route path="/likedpage" element={<LikedPage />} />
       </Routes>
       <Footer />
     </Router>
