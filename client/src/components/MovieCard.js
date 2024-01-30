@@ -6,6 +6,7 @@ import Popover from "react-bootstrap/Popover";
 import "./styles.css";
 import { IoMdStar } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
 
 function MovieCard({ movie }) {
   const title = movie.title || movie.name;
@@ -55,38 +56,46 @@ function MovieCard({ movie }) {
       <Card.Img
         variant="top"
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
       />
       <Card.Body style={{ backgroundColor: "black" }}>
-        <Card.Title style={{ color: "white" }}>{title}</Card.Title>
+        <Card.Title
+          className="d-flex justify-content-between align-items-center "
+          style={{ color: "white" }}
+        >
+          {title}
+          <Button variant="outline-dark" className="heart-button">
+            <FaHeart size={25} />
+          </Button>
+        </Card.Title>
         <Card.Text style={{ color: "white" }}>
           Rating: {(movie.vote_average / 2).toFixed(1)}&nbsp;
           <IoMdStar color="yellow" size={23} style={{ marginBottom: "2px" }} />
           &nbsp; ({movie.vote_count} Votes)
         </Card.Text>
-
-        <Button
-          className="trailer-button"
-          variant="danger"
-          onClick={handleTrailer}
-        >
-          Watch Trailer
-        </Button>
-        <OverlayTrigger
-          trigger="click"
-          placement="top-end"
-          show={showOverview}
-          overlay={popover}
-        >
+        <div className="d-flex justify-content-between align-items-center ">
           <Button
-            className="overview-button"
-            variant="secondary"
-            style={{ marginLeft: "65px" }}
-            onClick={handleOverview}
+            className="trailer-button"
+            variant="danger"
+            onClick={handleTrailer}
           >
-            Overview
+            Watch Trailer
           </Button>
-        </OverlayTrigger>
+
+          <OverlayTrigger
+            trigger="click"
+            placement="top-end"
+            show={showOverview}
+            overlay={popover}
+          >
+            <Button
+              className="overview-button"
+              variant="secondary"
+              onClick={handleOverview}
+            >
+              Overview
+            </Button>
+          </OverlayTrigger>
+        </div>
       </Card.Body>
     </Card>
   );
