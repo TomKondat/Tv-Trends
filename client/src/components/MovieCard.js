@@ -25,6 +25,8 @@ function MovieCard({ movie }) {
     setShowOverview(!showOverview);
   };
 
+  const handleLike = () => {};
+
   const popover = (
     <Popover id="popover-basic" className="overview-popover">
       <Popover.Header
@@ -63,9 +65,9 @@ function MovieCard({ movie }) {
           style={{ color: "white" }}
         >
           {title}
-          <Button variant="outline-dark" className="heart-button">
+          <span className="heart-button" onClick={handleLike}>
             <FaHeart size={25} />
-          </Button>
+          </span>
         </Card.Title>
         <Card.Text style={{ color: "white" }}>
           Rating: {(movie.vote_average / 2).toFixed(1)}&nbsp;
