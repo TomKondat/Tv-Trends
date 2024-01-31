@@ -98,10 +98,10 @@
   transform: scale(1.2) ;
 }
 
-button.heart-button{
+.heart-button{
   color: grey;
 }
-button.heart-button:hover
+.heart-button:hover
 
 {
   color: #CE3B3B; 
