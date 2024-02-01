@@ -28,11 +28,16 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies handleLike={handleLike} />} />
+        <Route
+          path="/movies"
+          element={<Movies handleLike={handleLike} likedMovies={likedMovies} />}
+        />
         <Route path="/tvshows" element={<TvShows />} />
         <Route
           path="/likedpage"
-          element={<LikedPage likedMovies={likedMovies} />}
+          element={
+            <LikedPage likedMovies={likedMovies} handleLike={handleLike} />
+          }
         />
       </Routes>
       <Footer />
