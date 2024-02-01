@@ -11,7 +11,17 @@ import { useState } from "react";
 function App() {
   const [likedMovies, setLikedMovies] = useState([]);
   const handleLike = (movie) => {
-    setLikedMovies([...likedMovies, movie]);
+    const movieId = movie.id;
+
+    if (likedMovies.some((likedMovie) => likedMovie.id === movieId)) {
+      // If movie is already liked, remove it from the liked list
+      setLikedMovies(
+        likedMovies.filter((likedMovie) => likedMovie.id !== movieId)
+      );
+    } else {
+      // If movie is not liked, add it to the liked list
+      setLikedMovies([...likedMovies, movie]);
+    }
   };
   return (
     <Router>
