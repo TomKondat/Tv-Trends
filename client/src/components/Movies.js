@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Pagination from "react-bootstrap/Pagination";
 import Spinner from "react-bootstrap/Spinner";
 
-function Movies() {
+function Movies({ handleLike }) {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const moviesPerPage = 4;
@@ -62,7 +62,7 @@ function Movies() {
           <Row xs={1} md={2} lg={3} xl={3} xxl={4} className="g-4">
             {currentMovies.map((movie) => (
               <Col key={movie.id}>
-                <MovieCard movie={movie} />
+                <MovieCard movie={movie} handleLike={handleLike} />
               </Col>
             ))}
           </Row>

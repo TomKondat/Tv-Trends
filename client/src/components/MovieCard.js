@@ -8,11 +8,11 @@ import { IoMdStar } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, handleLike }) {
   const title = movie.title || movie.name;
   const release_date = movie.release_date || movie.first_air_date;
   const [showOverview, setShowOverview] = useState(false);
-
+  const [like, setLike] = useState(false);
   const handleTrailer = () => {
     const searchTerm = `${title} trailer`;
     const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(
@@ -24,8 +24,6 @@ function MovieCard({ movie }) {
   const handleOverview = () => {
     setShowOverview(!showOverview);
   };
-
-  const handleLike = () => {};
 
   const popover = (
     <Popover id="popover-basic" className="overview-popover">
@@ -65,8 +63,14 @@ function MovieCard({ movie }) {
           style={{ color: "white" }}
         >
           {title}
-          <span className="heart-button" onClick={handleLike}>
-            <FaHeart size={25} />
+          <span
+            className="heart-button"
+            onClick={() => {
+              handleLike(movie);
+              setLike(!like);
+            }}
+          >
+            <FaHeart size={25} color={like ? "#CE3B3B" : "grey"} />
           </span>
         </Card.Title>
         <Card.Text style={{ color: "white" }}>
