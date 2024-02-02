@@ -64,7 +64,6 @@ function MovieCard({ movie, handleLike }) {
         >
           {title}
           <span
-            className="heart-button"
             onClick={() => {
               handleLike(movie);
               setLike(!like);

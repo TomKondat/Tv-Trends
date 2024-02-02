@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Pagination from "react-bootstrap/Pagination";
 import Spinner from "react-bootstrap/Spinner";
+import { Button } from "react-bootstrap";
 
 function Movies({ handleLike }) {
   const [movies, setMovies] = useState([]);
@@ -36,6 +37,35 @@ function Movies({ handleLike }) {
   const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const handleRating = () => {
+    // Sort movies by vote_average in descending order
+    const sortedMovies = [...movies].sort(
+      (a, b) => b.vote_average - a.vote_average
+    );
+    setMovies(sortedMovies);
+  };
+
+  const handleNewest = () => {
+    // Sort movies by release_date in descending order
+    const sortedMovies = [...movies].sort(
+      (a, b) => new Date(b.release_date) - new Date(a.release_date)
+    );
+    setMovies(sortedMovies);
+  };
+
+  const handleVotes = () => {
+    // Sort movies by vote_count in descending order
+    const sortedMovies = [...movies].sort(
+      (a, b) => b.vote_count - a.vote_count
+    );
+    setMovies(sortedMovies);
+  };
+
+  const handleClear = () => {
+    getMovies();
+  };
+
+  console.log(movies);
   return (
     <div className="movies-container">
       <Container>
@@ -43,6 +73,33 @@ function Movies({ handleLike }) {
           <h1 style={{ color: "#CE3B3B" }} className="py-5">
             Most Trending Movies Right Now
           </h1>
+        </div>
+        <div className="filter-container mb-4">
+          <Button
+            className=" me-5"
+            variant="secondary"
+            size="sm"
+            onClick={handleClear}
+          >
+            Clear Filters
+          </Button>
+          <Button
+            variant="outline-warning"
+            className=" me-2"
+            onClick={handleRating}
+          >
+            Higher Rating
+          </Button>
+          <Button
+            className=" me-2"
+            variant="outline-warning"
+            onClick={handleNewest}
+          >
+            Latest Release
+          </Button>
+          <Button variant="outline-warning" onClick={handleVotes}>
+            Most Votes
+          </Button>
         </div>
         {loading ? (
           <Spinner

@@ -93,7 +93,7 @@
 }
 
 .card-hover-animation:hover {
-  transform: scale(1.1) ;
+  transform: scale(1.04) ;
 }
 
 .heart-link {
@@ -105,12 +105,17 @@
   transform: scale(1.2) ;
 }
 
-.heart-button{
-  color: grey;
+.filter-container {
+  padding: 1%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: inline-flex;
 }
-.heart-button:hover
 
-{
-  color: #CE3B3B; 
-  transform: scale(1.1) ;
+.filter-container button {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  box-shadow: inset 0 0 0 1.1px rgba(255, 255, 255, 0.3);
+  text-align: center;
+  transition-duration: 0.3s;
+  font-weight: bold;
 }
