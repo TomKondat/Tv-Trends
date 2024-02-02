@@ -52,6 +52,13 @@
     min-height: 95vh;
    
   }
+
+  .liked-container {
+    background-image: url("../images/moviebackground.jpg");
+    background-size: cover;
+    min-height: 95vh;
+   
+  }
  
   .tvshows-container {
     background-image: url("../images/tvshowbackground.jpg");
