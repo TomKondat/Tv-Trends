@@ -99,11 +99,11 @@
 }
 
 .heart-link {
-  color: gray; 
-}
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  }
 
 .heart-link:hover {
-  color: #CE3B3B; 
   transform: scale(1.2) ;
 }
 
