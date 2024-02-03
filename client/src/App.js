@@ -36,7 +36,11 @@ function App() {
         <Route
           path="/likedpage"
           element={
-            <LikedPage likedMovies={likedMovies} handleLike={handleLike} />
+            <LikedPage
+              likedMovies={likedMovies}
+              handleLike={handleLike}
+              setLikedMovies={setLikedMovies}
+            />
           }
         />
       </Routes>

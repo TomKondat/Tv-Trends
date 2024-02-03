@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -13,6 +13,25 @@ function MovieCard({ movie, handleLike }) {
   const release_date = movie.release_date || movie.first_air_date;
   const [showOverview, setShowOverview] = useState(false);
   const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    // Check if the movie is liked when the component mounts
+    const likedMovies = JSON.parse(localStorage.getItem("likedMovies")) || [];
+    setLike(likedMovies.some((likedMovie) => likedMovie.id === movie.id));
+
+    // Add event listener to clear local storage on page refresh
+    const handleBeforeUnload = () => {
+      localStorage.removeItem("likedMovies");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [movie.id]);
+
   const handleTrailer = () => {
     const searchTerm = `${title} trailer`;
     const youtubeSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(
@@ -23,6 +42,20 @@ function MovieCard({ movie, handleLike }) {
 
   const handleOverview = () => {
     setShowOverview(!showOverview);
+  };
+
+  const handleLikeClick = () => {
+    handleLike(movie);
+
+    // Toggle the liked state and update localStorage
+    setLike((prevLike) => {
+      const likedMovies = JSON.parse(localStorage.getItem("likedMovies")) || [];
+      const updatedLikedMovies = prevLike
+        ? likedMovies.filter((likedMovie) => likedMovie.id !== movie.id)
+        : [...likedMovies, movie];
+      localStorage.setItem("likedMovies", JSON.stringify(updatedLikedMovies));
+      return !prevLike;
+    });
   };
 
   const popover = (
@@ -63,13 +96,7 @@ function MovieCard({ movie, handleLike }) {
           style={{ color: "white" }}
         >
           {title}
-          <span
-            className="heart-button"
-            onClick={() => {
-              handleLike(movie);
-              setLike(!like);
-            }}
-          >
+          <span onClick={handleLikeClick}>
             <FaHeart size={25} color={like ? "#CE3B3B" : "grey"} />
           </span>
         </Card.Title>
