@@ -14,11 +14,12 @@ function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
           Everything you've liked
         </h1>
         <Button
-          variant="danger"
+          variant="secondary"
           onClick={handleClearLiked}
           disabled={likedMovies.length === 0}
+          className="my-4"
         >
-          Clear all liked movies
+          {likedMovies.length === 0 ? "List is empty" : "Clear All"}
         </Button>
         <div>
           {likedMovies &&
@@ -28,9 +29,11 @@ function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
               <MovieCard key={movie.id} movie={movie} handleLike={handleLike} />
             ))
           ) : (
-            <h1 style={{ color: "#CE3B3B" }} className="py-5">
-              No liked movies yet
-            </h1>
+            <div className="d-flex justify-content-center align-items-center mt-5">
+              <h1 style={{ color: "#CE3B3B" }} className="filter-container">
+                List is empty <span style={{ color: "black" }}>😢</span>
+              </h1>
+            </div>
           )}
         </div>
       </Container>

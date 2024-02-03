@@ -14,6 +14,7 @@
   .welcome-heading span {
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
   }
 
   .welcome-content {
@@ -25,6 +26,7 @@
   .welcome-content span {
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
   }
 
   .explore-movies {
@@ -54,7 +56,7 @@
   }
 
   .liked-container {
-    background-image: url("../images/moviebackground.jpg");
+    background-image: url("../images/likedbackground.jpg");
     background-size: cover;
     min-height: 95vh;
    
@@ -109,6 +111,8 @@
   padding: 1%;
   background-color: rgba(0, 0, 0, 0.3);
   display: inline-flex;
+  border-radius: 20px;
+
 }
 
 .filter-container button {

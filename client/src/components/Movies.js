@@ -31,7 +31,7 @@ function Movies({ handleLike }) {
   useEffect(() => {
     getMovies();
   }, []);
-
+  // pagination
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
   const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
