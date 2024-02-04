@@ -1,7 +1,7 @@
 .home-container {
     background-image: url("../images/deadpool.jpg");
     background-size: cover;
-    height: 100vh; 
+    min-height: 95vh;
   }
 
   .welcome-heading {

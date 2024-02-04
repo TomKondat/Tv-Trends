@@ -6,6 +6,7 @@ import Button from "react-bootstrap/esm/Button";
 function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
   const handleClearLiked = () => {
     setLikedMovies([]);
+    localStorage.removeItem("likedMovies");
   };
   return (
     <div className="liked-container">
