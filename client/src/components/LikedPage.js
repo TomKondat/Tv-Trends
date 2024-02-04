@@ -14,14 +14,15 @@ function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
         <h1 style={{ color: "#CE3B3B" }} className="py-5">
           Everything you've liked
         </h1>
-        <Button
-          variant="secondary"
-          onClick={handleClearLiked}
-          disabled={likedMovies.length === 0}
-          className="my-4"
-        >
-          {likedMovies.length === 0 ? "List is empty" : "Clear All"}
-        </Button>
+        <div className="filter-container mb-4">
+          <Button
+            variant="secondary"
+            onClick={handleClearLiked}
+            disabled={likedMovies.length === 0}
+          >
+            {likedMovies.length === 0 ? "List is empty" : "Clear All"}
+          </Button>
+        </div>
         <div>
           {likedMovies &&
           Array.isArray(likedMovies) &&
