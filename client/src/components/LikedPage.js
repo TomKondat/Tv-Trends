@@ -2,12 +2,13 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/esm/Button";
-
+import { Col, Row } from "react-bootstrap";
 function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
   const handleClearLiked = () => {
     setLikedMovies([]);
     localStorage.removeItem("likedMovies");
   };
+
   return (
     <div className="liked-container">
       <Container>
@@ -27,9 +28,13 @@ function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
           {likedMovies &&
           Array.isArray(likedMovies) &&
           likedMovies.length > 0 ? (
-            likedMovies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} handleLike={handleLike} />
-            ))
+            <Row xs={1} md={2} lg={3} xl={3} xxl={4} className="g-4">
+              {likedMovies.map((movie) => (
+                <Col key={movie.id}>
+                  <MovieCard movie={movie} handleLike={handleLike} />
+                </Col>
+              ))}
+            </Row>
           ) : (
             <div className="d-flex justify-content-center align-items-center mt-5">
               <h1 style={{ color: "#CE3B3B" }} className="filter-container">
