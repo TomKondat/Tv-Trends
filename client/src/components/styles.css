@@ -5,48 +5,63 @@
   }
 
   .welcome-heading {
-    color: white;
     font-size: 3rem; 
     font-weight: bold;
-    padding-left:3%;
-    padding-top: 2%;
+    color: #CE3B3B;
   }
   .welcome-heading span {
-    background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-  }
-
-  .welcome-content {
-    color: white;
-    font-size: 2rem; 
-    font-weight: 100;
-    padding-left:3%;
-  }
-  .welcome-content span {
     background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
   }
 
-  .explore-movies {
-    margin-top: 6%;
-    margin-left: 3%;
-    background-image: url("../images/red.jpg");
-
-  }
-
-  .explore-tvshows {
-    margin-top: 6%;
-    margin-left: 4%;
-    background-image: url("../images/blue.jpg");
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .welcome-content {
+    color: white;
+    font-size: 2rem;
   }
   
+  .welcome-content span {
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: inline-block;
+    animation: changeText 4.5s linear infinite;
+  }
+  
+
+  button.explore-movies {
+    background-image: url("../images/red.jpg");
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    border-radius: 15px;
+  }
+  
+  .explore-movies:hover {
+    transform: scale(1.1);
+
+  }
+  
+  .explore-movies:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 20px #CE3B3B; /* Add a subtle box shadow */
+  }
+
+  button.explore-tvshows {
+    background-image: url("../images/blue.jpg");
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.5rem;
+    padding: 15px 20px;
+    border-radius: 15px;
+  }
+  button.explore-tvshows:hover {
+    transform: scale(1.1);
+  }
+  
+  button.explore-tvshows:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 20px #1414e8; /* Add a subtle box shadow */
+  }
   .movies-container {
     background-image: url("../images/moviebackground.jpg");
     /* background-color: #0b0a2d; */

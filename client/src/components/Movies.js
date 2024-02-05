@@ -64,8 +64,6 @@ function Movies({ handleLike }) {
   const handleClear = () => {
     getMovies();
   };
-
-  console.log(movies);
   return (
     <div className="movies-container">
       <Container>

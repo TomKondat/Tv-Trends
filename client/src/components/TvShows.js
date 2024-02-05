@@ -65,7 +65,6 @@ function Movies({ handleLike }) {
     getMovies();
   };
 
-  console.log(movies);
   return (
     <div className="tvshows-container">
       <Container>

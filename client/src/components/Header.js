@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
-      <Container className="d-flex justify-content-center align-items-center">
-        <div className="px-5">
+      <Container className="d-flex justify-content-between align-items-center">
+        <div>
           <Navbar.Brand as={Link} to="/">
             <img
               alt=""
