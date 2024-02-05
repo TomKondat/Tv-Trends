@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MovieCard from "./MovieCard";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/esm/Button";
@@ -8,6 +8,7 @@ function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
   const handleClearLiked = () => {
     setLikedMovies([]);
     localStorage.removeItem("likedMovies");
+    setActivePage(0); // Reset to the first page when clearing liked movies
   };
 
   const itemsPerPage = 4;
@@ -15,6 +16,13 @@ function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
 
   const totalItems = likedMovies.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  useEffect(() => {
+    // Ensure that activePage is valid after likedMovies change
+    if (totalPages > 0 && activePage >= totalPages) {
+      setActivePage(totalPages - 1);
+    }
+  }, [likedMovies, activePage, totalPages]);
 
   const handleNext = () => {
     setActivePage((prevPage) => (prevPage + 1) % totalPages);
