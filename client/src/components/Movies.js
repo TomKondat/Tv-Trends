@@ -69,11 +69,9 @@ function Movies({ handleLike }) {
   return (
     <div className="movies-container">
       <Container>
-        <div>
-          <h1 style={{ color: "#CE3B3B" }} className="py-5">
-            Most Trending Movies Right Now
-          </h1>
-        </div>
+        <h1 style={{ color: "#CE3B3B" }} className="py-5">
+          Most Trending Movies Right Now
+        </h1>
         <div className="filter-container mb-4">
           <Button
             className=" me-5"
