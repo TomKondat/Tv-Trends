@@ -3,6 +3,8 @@ import MovieCard from "./MovieCard";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/esm/Button";
 import { Carousel, Col, Row } from "react-bootstrap";
+import { GrLinkNext } from "react-icons/gr";
+import { GrLinkPrevious } from "react-icons/gr";
 
 function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
   const handleClearLiked = () => {
@@ -79,15 +81,23 @@ function LikedPage({ likedMovies, handleLike, setLikedMovies }) {
           </div>
         )}
         {totalPages > 1 && (
-          <div className="d-flex justify-content-between mt-3 ">
-            <Button onClick={handlePrev} disabled={activePage === 0}>
-              Previous
+          <div
+            style={{ color: "#CE3B3B", fontSize: "1.5rem" }}
+            className="d-flex justify-content-between mt-3 "
+          >
+            <Button
+              variant="danger"
+              onClick={handlePrev}
+              disabled={activePage === 0}
+            >
+              <GrLinkPrevious size={25} />
             </Button>
             <Button
+              variant="danger"
               onClick={handleNext}
               disabled={activePage === totalPages - 1}
             >
-              Next
+              <GrLinkNext size={25} />
             </Button>
           </div>
         )}
