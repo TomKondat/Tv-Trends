@@ -48,7 +48,7 @@ function Movies({ handleLike }) {
   const handleNewest = () => {
     // Sort movies by release_date in descending order
     const sortedMovies = [...movies].sort(
-      (a, b) => new Date(b.release_date) - new Date(a.release_date)
+      (a, b) => new Date(b.first_air_date) - new Date(a.first_air_date)
     );
     setMovies(sortedMovies);
   };
